@@ -28,10 +28,10 @@ public class QQSSOProxy {
     }
 
     public static void login(Context context, String appId, String scope, IUiListener listener) {
-//        Tencent tencent = getTencentInstance(context, appId);
-//        if (!SocialSSOProxy.isTokenValid(context)) {
-//            tencent.login((Activity) context, scope, listener);
-//        }
+        Tencent tencent = getTencentInstance(context, appId);
+        if (!SocialSSOProxy.isTokenValid(context)) {
+            tencent.login((Activity) context, scope, listener);
+        }
     }
 
     public static void logout(Context context, String appId) {
