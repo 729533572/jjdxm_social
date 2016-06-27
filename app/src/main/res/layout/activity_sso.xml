@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/sso_btn_login_weibo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录微博"/>
+
+        <Button
+            android:id="@+id/sso_btn_logout_weibo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登出微博"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/sso_btn_login_wechat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录微信"/>
+
+        <Button
+            android:id="@+id/sso_btn_logout_wechat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登出微信"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/sso_btn_login_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录QQ"/>
+
+        <Button
+            android:id="@+id/sso_btn_logout_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登出QQ"/>
+    </LinearLayout>
+</LinearLayout>
