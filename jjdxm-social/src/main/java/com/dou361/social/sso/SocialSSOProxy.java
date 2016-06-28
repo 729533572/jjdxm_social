@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.dou361.social.R;
 import com.dou361.social.SocialSDK;
 import com.dou361.social.model.SocialInfo;
 import com.dou361.social.model.SocialToken;
@@ -19,6 +18,7 @@ import com.dou361.social.sso.wechat.IWXCallback;
 import com.dou361.social.sso.wechat.WeChatSSOProxy;
 import com.dou361.social.sso.weibo.User;
 import com.dou361.social.sso.weibo.WeiboSSOProxy;
+import com.dou361.social.utils.ResourceUtils;
 import com.sina.weibo.sdk.auth.WeiboAuthListener;
 import com.sina.weibo.sdk.exception.WeiboException;
 import com.sina.weibo.sdk.net.RequestListener;
@@ -30,8 +30,24 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 社交授权proxy
- * Created by zhanghailong-ms on 2015/11/16.
+ * ========================================
+ * <p>
+ * 版 权：dou361.com 版权所有 （C） 2015
+ * <p>
+ * 作 者：陈冠明
+ * <p>
+ * 个人网站：http://www.dou361.com
+ * <p>
+ * 版 本：1.0
+ * <p>
+ * 创建日期：2016/6/27 22:59
+ * <p>
+ * 描 述：社交授权proxy
+ * <p>
+ * <p>
+ * 修订历史：
+ * <p>
+ * ========================================
  */
 public class SocialSSOProxy {
 
@@ -365,6 +381,6 @@ public class SocialSSOProxy {
         intent.putExtras(bundle);
         intent.setClass(context, SocialOauthActivity.class);
         context.startActivity(intent);
-        ((Activity) context).overridePendingTransition(R.anim.es_snack_in, 0);
+        ((Activity) context).overridePendingTransition(ResourceUtils.getResourceIdByName(context, "anim", "jjdxm_social_snack_in"), 0);
     }
 }

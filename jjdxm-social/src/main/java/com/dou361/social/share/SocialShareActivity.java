@@ -1,17 +1,18 @@
 package com.dou361.social.share;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 
-import com.dou361.social.R;
 import com.dou361.social.SocialSDK;
 import com.dou361.social.model.SocialInfo;
 import com.dou361.social.model.SocialShareScene;
 import com.dou361.social.otto.BusProvider;
 import com.dou361.social.otto.ShareBusEvent;
+import com.dou361.social.utils.ResourceUtils;
 import com.dou361.social.view.ShareButton;
 import com.sina.weibo.sdk.api.share.BaseResponse;
 import com.sina.weibo.sdk.api.share.IWeiboHandler;
@@ -19,8 +20,24 @@ import com.sina.weibo.sdk.constant.WBConstants;
 import com.tencent.connect.common.Constants;
 
 /**
- * 一键社会化分享
- * Created by zhanghailong-ms on 2015/11/23.
+ * ========================================
+ * <p>
+ * 版 权：dou361.com 版权所有 （C） 2015
+ * <p>
+ * 作 者：陈冠明
+ * <p>
+ * 个人网站：http://www.dou361.com
+ * <p>
+ * 版 本：1.0
+ * <p>
+ * 创建日期：2016/6/27 22:45
+ * <p>
+ * 描 述：一键社会化分享
+ * <p>
+ * <p>
+ * 修订历史：
+ * <p>
+ * ========================================
  */
 public class SocialShareActivity extends Activity implements IWeiboHandler.Response {
 
@@ -33,12 +50,13 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
     private ShareButton sbQQ;
     private ShareButton sbQZone;
     private ShareButton sbMore;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.es_activity_social_share);
+        mContext = this;
+        setContentView(ResourceUtils.getResourceIdByName(mContext, "layout", "jjdxm_social_activity_social_share"));
 
         getWindow().setGravity(Gravity.BOTTOM);
 
@@ -49,7 +67,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
     }
 
     private void initViews() {
-        sbWechat = (ShareButton) findViewById(R.id.social_share_sb_wechat);
+        sbWechat = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_share_sb_wechat"));
         sbWechat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +75,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
                 SocialSDK.shareToWeChat(SocialShareActivity.this, info.getWechatAppId(), scene);
             }
         });
-        sbWeChatTimeline = (ShareButton) findViewById(R.id.social_share_sb_wechat_timeline);
+        sbWeChatTimeline = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_share_sb_wechat_timeline"));
         sbWeChatTimeline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +83,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
                 scene.setType(SocialShareScene.SHARE_TYPE_WECHAT_TIMELINE);
             }
         });
-        sbWeibo = (ShareButton) findViewById(R.id.social_share_sb_weibo);
+        sbWeibo = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_share_sb_weibo"));
         sbWeibo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +91,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
                 SocialSDK.shareToWeibo(SocialShareActivity.this, info.getWeiboAppKey(), scene);
             }
         });
-        sbQQ = (ShareButton) findViewById(R.id.social_share_sb_qq);
+        sbQQ = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_share_sb_qq"));
         sbQQ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,7 +99,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
                 SocialSDK.shareToQQ(SocialShareActivity.this, info.getQqAppId(), scene);
             }
         });
-        sbQZone = (ShareButton) findViewById(R.id.social_share_sb_qzone);
+        sbQZone = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_share_sb_qzone"));
         sbQZone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,7 +107,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
                 SocialSDK.shareToQZone(SocialShareActivity.this, info.getQqAppId(), scene);
             }
         });
-        sbMore = (ShareButton) findViewById(R.id.social_share_sb_more);
+        sbMore = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_share_sb_more"));
         sbMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,7 +125,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(0, R.anim.es_snack_out);
+        overridePendingTransition(0, ResourceUtils.getResourceIdByName(mContext, "anim", "jjdxm_social_snack_out"));
     }
 
     @Override

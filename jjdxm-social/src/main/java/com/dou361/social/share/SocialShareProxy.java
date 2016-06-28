@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.dou361.social.R;
 import com.dou361.social.SocialSDK;
 import com.dou361.social.model.SocialInfo;
 import com.dou361.social.model.SocialShareScene;
@@ -17,6 +16,7 @@ import com.dou361.social.share.wechat.IWXShareCallback;
 import com.dou361.social.share.wechat.WeChatShareProxy;
 import com.dou361.social.share.weibo.AccessTokenKeeper;
 import com.dou361.social.share.weibo.WeiboShareProxy;
+import com.dou361.social.utils.ResourceUtils;
 import com.sina.weibo.sdk.api.share.IWeiboHandler;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.WeiboAuthListener;
@@ -26,8 +26,24 @@ import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 
 /**
- * 社会化分享代理
- * Created by zhanghailong-ms on 2015/11/23.
+ * ========================================
+ * <p>
+ * 版 权：dou361.com 版权所有 （C） 2015
+ * <p>
+ * 作 者：陈冠明
+ * <p>
+ * 个人网站：http://www.dou361.com
+ * <p>
+ * 版 本：1.0
+ * <p>
+ * 创建日期：2016/6/27 22:50
+ * <p>
+ * 描 述：社会化分享代理
+ * <p>
+ * <p>
+ * 修订历史：
+ * <p>
+ * ========================================
  */
 public class SocialShareProxy {
 
@@ -45,7 +61,7 @@ public class SocialShareProxy {
         intent.setClass(context, SocialShareActivity.class);
         context.startActivity(intent);
 
-        ((Activity) context).overridePendingTransition(R.anim.es_snack_in, 0);
+        ((Activity) context).overridePendingTransition(ResourceUtils.getResourceIdByName(context, "anim", "jjdxm_social_snack_in"), 0);
     }
 
     private static IWXShareCallback wechatShareCallback = new IWXShareCallback() {

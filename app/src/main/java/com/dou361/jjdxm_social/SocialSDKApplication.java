@@ -11,7 +11,6 @@ public class SocialSDKApplication extends Application {
 
     @Override
     public void onCreate() {
-
         initBugHD();
         super.onCreate();
     }

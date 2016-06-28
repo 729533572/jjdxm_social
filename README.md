@@ -70,7 +70,7 @@ If you find any bug when using project, please report [here][issues]. Thanks for
 [project]:https://github.com/jjdxmashl/jjdxm_social/
 [issues]:https://github.com/jjdxmashl/jjdxm_social/issues/new
 [downapk]:https://raw.githubusercontent.com/jjdxmashl/jjdxm_social/master/apk/app-debug.apk
-[lastaar]:https://raw.githubusercontent.com/jjdxmashl/jjdxm_baseutils/master/release/jjdxm-social-1.0.0.aar
-[lastjar]:https://raw.githubusercontent.com/jjdxmashl/jjdxm_baseutils/master/release/jjdxm-social-1.0.0.jar
+[lastaar]:https://raw.githubusercontent.com/jjdxmashl/jjdxm_social/master/release/jjdxm-social-1.0.0.aar
+[lastjar]:https://raw.githubusercontent.com/jjdxmashl/jjdxm_social/master/release/jjdxm-social-1.0.0.jar
 [icon01]:https://raw.githubusercontent.com/jjdxmashl/jjdxm_social/master/screenshots/icon01.png
 [icon02]:https://raw.githubusercontent.com/jjdxmashl/jjdxm_social/master/screenshots/icon02.png

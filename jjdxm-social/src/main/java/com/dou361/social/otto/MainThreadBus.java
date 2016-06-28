@@ -6,8 +6,24 @@ import android.os.Looper;
 import com.squareup.otto.Bus;
 
 /**
- * To post from any thread (main or background) and receive on the main thread
- * Created by zhanghailong-ms on 2015/11/24.
+ * ========================================
+ * <p>
+ * 版 权：dou361.com 版权所有 （C） 2015
+ * <p>
+ * 作 者：陈冠明
+ * <p>
+ * 个人网站：http://www.dou361.com
+ * <p>
+ * 版 本：1.0
+ * <p>
+ * 创建日期：2016/6/27 22:49
+ * <p>
+ * 描 述：To post from any thread (main or background) and receive on the main thread
+ * <p>
+ * <p>
+ * 修订历史：
+ * <p>
+ * ========================================
  */
 public class MainThreadBus extends Bus {
 

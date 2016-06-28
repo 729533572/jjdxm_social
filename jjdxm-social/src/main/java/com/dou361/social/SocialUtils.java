@@ -6,8 +6,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import com.dou361.social.R;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,9 +13,25 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-
 /**
- * Created by zhanghailong-ms on 2015/4/7.
+ * ========================================
+ * <p>
+ * 版 权：dou361.com 版权所有 （C） 2015
+ * <p>
+ * 作 者：陈冠明
+ * <p>
+ * 个人网站：http://www.dou361.com
+ * <p>
+ * 版 本：1.0
+ * <p>
+ * 创建日期：2016/6/27 22:55
+ * <p>
+ * 描 述：工具
+ * <p>
+ * <p>
+ * 修订历史：
+ * <p>
+ * ========================================
  */
 public class SocialUtils {
 
@@ -183,6 +197,6 @@ public class SocialUtils {
      */
     public static byte[] getDefaultShareImage(Context context) {
 
-        return bmpToByteArray(BitmapFactory.decodeResource(context.getResources(), R.drawable.es_icon_default), true);
+        return bmpToByteArray(BitmapFactory.decodeResource(context.getResources(), R.drawable.jjdxm_social_icon_default), true);
     }
 }

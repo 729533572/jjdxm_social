@@ -21,12 +21,25 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
-
 /**
- * 该类定义了微博授权时所需要的参数。
- *
- * @author SINA
- * @since 2013-10-07
+ * ========================================
+ * <p>
+ * 版 权：dou361.com 版权所有 （C） 2015
+ * <p>
+ * 作 者：陈冠明
+ * <p>
+ * 个人网站：http://www.dou361.com
+ * <p>
+ * 版 本：1.0
+ * <p>
+ * 创建日期：2016/6/27 22:53
+ * <p>
+ * 描 述：该类定义了微博授权时所需要的参数。
+ * <p>
+ * <p>
+ * 修订历史：
+ * <p>
+ * ========================================
  */
 public class AccessTokenKeeper {
     private static final String PREFERENCES_NAME = "com_weibo_sdk_android";

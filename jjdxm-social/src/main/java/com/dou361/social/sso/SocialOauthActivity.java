@@ -1,19 +1,36 @@
 package com.dou361.social.sso;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.dou361.social.R;
 import com.dou361.social.SocialSDK;
 import com.dou361.social.model.SocialInfo;
+import com.dou361.social.utils.ResourceUtils;
 import com.dou361.social.view.ShareButton;
 import com.tencent.connect.common.Constants;
 
 /**
- * 社交授权activity
- * Created by zhanghailong-ms on 2015/11/20.
+ * ========================================
+ * <p>
+ * 版 权：dou361.com 版权所有 （C） 2015
+ * <p>
+ * 作 者：陈冠明
+ * <p>
+ * 个人网站：http://www.dou361.com
+ * <p>
+ * 版 本：1.0
+ * <p>
+ * 创建日期：2016/6/27 22:56
+ * <p>
+ * 描 述：社交授权activity
+ * <p>
+ * <p>
+ * 修订历史：
+ * <p>
+ * ========================================
  */
 public class SocialOauthActivity extends Activity {
 
@@ -30,23 +47,24 @@ public class SocialOauthActivity extends Activity {
      * type=1，用户选择微信登录
      */
     private int type = 0;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.es_activity_social_oauth);
+        mContext = this;
+        setContentView(ResourceUtils.getResourceIdByName(mContext, "layout", "jjdxm_social_activity_social_oauth"));
 
         info = (SocialInfo) getIntent().getExtras().getSerializable("info");
 
-        llWeibo = (ShareButton) findViewById(R.id.social_oauth_sb_weibo);
+        llWeibo = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_oauth_sb_weibo"));
         llWeibo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SocialSSOProxy.loginWeibo(SocialOauthActivity.this, info);
             }
         });
-        llWeChat = (ShareButton) findViewById(R.id.social_oauth_sb_wechat);
+        llWeChat = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_oauth_sb_wechat"));
         llWeChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +72,7 @@ public class SocialOauthActivity extends Activity {
                 type = 1;
             }
         });
-        llQQ = (ShareButton) findViewById(R.id.social_oauth_sb_qq);
+        llQQ = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_oauth_sb_qq"));
         llQQ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +107,6 @@ public class SocialOauthActivity extends Activity {
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(0, R.anim.es_snack_out);
+        overridePendingTransition(0, ResourceUtils.getResourceIdByName(mContext, "anim", "jjdxm_social_snack_out"));
     }
 }

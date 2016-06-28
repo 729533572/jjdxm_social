@@ -37,7 +37,7 @@ public class ShareButton extends LinearLayout {
         this.d = v1.getString(0);
         this.c = v1.getDrawable(1);
         LayoutInflater v2 = LayoutInflater.from(context);
-        View view = v2.inflate(R.layout.es_view_btn_share, null);
+        View view = v2.inflate(R.layout.jjdxm_social_view_btn_share, null);
         this.a = (ImageView) view.findViewById(R.id.view_btn_share_iv);
         this.b = (TextView) view.findViewById(R.id.view_btn_share_tv);
         this.b.setText(this.d);

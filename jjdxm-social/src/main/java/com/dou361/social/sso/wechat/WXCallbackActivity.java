@@ -12,12 +12,26 @@ import com.tencent.mm.sdk.modelmsg.SendAuth;
 import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
-
 /**
- * 微信授权，分享回调activity
- * Created by zhanghailong-ms on 2015/7/11.
+ * ========================================
+ * <p>
+ * 版 权：dou361.com 版权所有 （C） 2015
+ * <p>
+ * 作 者：陈冠明
+ * <p>
+ * 个人网站：http://www.dou361.com
+ * <p>
+ * 版 本：1.0
+ * <p>
+ * 创建日期：2016/6/27 22:56
+ * <p>
+ * 描 述：微信授权，分享回调activity
+ * <p>
+ * <p>
+ * 修订历史：
+ * <p>
+ * ========================================
  */
-
 public class WXCallbackActivity extends Activity implements IWXAPIEventHandler {
 
     @Override
