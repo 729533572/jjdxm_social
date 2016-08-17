@@ -48,9 +48,9 @@ or Gradle:
 
 	compile 'com.dou361.social:jjdxm-social:1.0.0'
 
-[架包的打包引用以及冲突解决][jaraar]
+jjdxm-social requires at minimum Java 15 or Android 4.0.
 
-jjdxm-periscope requires at minimum Java 15 or Android 4.0.
+[架包的打包引用以及冲突解决][jaraar]
 
 ## Proguard ##
 
@@ -252,6 +252,12 @@ SDK使用了[Otto](http://square.github.io/otto/)作为事件库，用以组件�
 	compile 'tencent:jjdxm-tencent:1.0.0' 对应的架包open_sdk_r5756_lite.jar
 	compile 'winchat:jjdxm-winchat:1.0.0' 对应版本 libammsdk.jar
 	compile 'weibo:jjdxm-weibo:1.0.0' 对应的微博weiboSDKCore_3.1.4.jar
+
+QQ: [jjdxm-tencent](https://github.com/jjdxmashl/jjdxm_tencent)
+
+微信: [jjdxm-winchat](https://github.com/jjdxmashl/jjdxm_winchat)
+
+微博: [jjdxm-weibo](https://github.com/jjdxmashl/jjdxm_weibo)
 
 
 ## More Actions ##
