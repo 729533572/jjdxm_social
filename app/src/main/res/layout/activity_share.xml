@@ -5,13 +5,6 @@
               android:layout_margin="16dp"
               android:orientation="vertical">
 
-
-    <Button
-        android:id="@+id/share_btn_share_weibo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="分享微博"/>
-
     <Button
         android:id="@+id/share_btn_share_wechat"
         android:layout_width="match_parent"
@@ -24,6 +17,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="分享朋友圈"/>
+
+
+    <Button
+        android:id="@+id/share_btn_share_weibo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="分享微博"/>
 
     <Button
         android:id="@+id/share_btn_share_qq"
