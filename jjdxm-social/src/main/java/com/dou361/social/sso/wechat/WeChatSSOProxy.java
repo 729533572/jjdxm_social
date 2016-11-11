@@ -82,6 +82,7 @@ public class WeChatSSOProxy {
                         JSONObject info = new JSONObject(result);
                         //当前token的有效市场只有7200s，需要利用refresh_token去获取新token，考虑当前需要利用token的只有获取用户信息，手动设置token超时为30天
                         SocialToken token = new SocialToken(info.getString("openid"), info.getString("access_token"), info.getString("refresh_token"), /*info.getLong("expires_in")*/ 30 * 24 * 60 * 60);
+                        token.setResult(result);
                         callback.onGetTokenSuccess(token);
                     } catch (JSONException e) {
                         callback.onFailure(e);
@@ -113,7 +114,7 @@ public class WeChatSSOProxy {
 
                             SocialUser user = new SocialUser(SocialUser.TYPE_WECHAT,
                                     name, icon, gender, token);
-
+                            user.setResult(result);
                             callback.onGetUserInfoSuccess(user);
                         } catch (JSONException e) {
                             callback.onFailure(e);

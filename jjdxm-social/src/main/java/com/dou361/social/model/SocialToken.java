@@ -25,6 +25,7 @@ public class SocialToken {
     private String openId;
     private String token;
     private String refreshToken;
+    private String result;
     private long expiresTime;
 
     public SocialToken() {
@@ -67,6 +68,14 @@ public class SocialToken {
 
     public void setExpiresTime(long expiresTime) {
         this.expiresTime = expiresTime;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
     }
 
     @Override

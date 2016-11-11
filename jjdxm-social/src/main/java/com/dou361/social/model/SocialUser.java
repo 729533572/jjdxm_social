@@ -36,6 +36,7 @@ public class SocialUser {
     private String avatar;
     private int gender;
     private String desc;
+    private String result;
     private SocialToken token;
 
     public SocialUser() {
@@ -104,6 +105,14 @@ public class SocialUser {
 
     public void setToken(SocialToken token) {
         this.token = token;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
     }
 
     public boolean isTokenValid() {
