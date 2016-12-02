@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 
+import com.dou361.social.R;
 import com.dou361.social.SocialSDK;
 import com.dou361.social.model.SocialInfo;
 import com.dou361.social.model.SocialShareScene;
 import com.dou361.social.otto.BusProvider;
 import com.dou361.social.otto.ShareBusEvent;
-import com.dou361.social.utils.ResourceUtils;
 import com.dou361.social.view.ShareButton;
 import com.sina.weibo.sdk.api.share.BaseResponse;
 import com.sina.weibo.sdk.api.share.IWeiboHandler;
@@ -56,7 +56,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
-        setContentView(ResourceUtils.getResourceIdByName(mContext, "layout", "jjdxm_social_activity_social_share"));
+        setContentView(R.layout.jjdxm_social_activity_social_share);
 
         getWindow().setGravity(Gravity.BOTTOM);
 
@@ -67,7 +67,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
     }
 
     private void initViews() {
-        sbWechat = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_share_sb_wechat"));
+        sbWechat = (ShareButton) findViewById(R.id.social_share_sb_wechat);
         sbWechat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +75,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
                 SocialSDK.shareToWeChat(SocialShareActivity.this, info.getWechatAppId(), scene);
             }
         });
-        sbWeChatTimeline = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_share_sb_wechat_timeline"));
+        sbWeChatTimeline = (ShareButton) findViewById(R.id.social_share_sb_wechat_timeline);
         sbWeChatTimeline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +83,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
                 scene.setType(SocialShareScene.SHARE_TYPE_WECHAT_TIMELINE);
             }
         });
-        sbWeibo = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_share_sb_weibo"));
+        sbWeibo = (ShareButton) findViewById(R.id.social_share_sb_weibo);
         sbWeibo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +91,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
                 SocialSDK.shareToWeibo(SocialShareActivity.this, info.getWeiboAppKey(), scene);
             }
         });
-        sbQQ = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_share_sb_qq"));
+        sbQQ = (ShareButton) findViewById(R.id.social_share_sb_qq);
         sbQQ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,7 +99,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
                 SocialSDK.shareToQQ(SocialShareActivity.this, info.getQqAppId(), scene);
             }
         });
-        sbQZone = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_share_sb_qzone"));
+        sbQZone = (ShareButton) findViewById(R.id.social_share_sb_qzone);
         sbQZone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,14 +107,14 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
                 SocialSDK.shareToQZone(SocialShareActivity.this, info.getQqAppId(), scene);
             }
         });
-        sbMore = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_share_sb_more"));
+        sbMore = (ShareButton) findViewById(R.id.social_share_sb_more);
         sbMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 scene.setType(SocialShareScene.SHARE_TYPE_DEFAULT);
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plain");
-                share.putExtra(Intent.EXTRA_TEXT, scene.getTitle() + "\n\r" + scene.getUrl());
+                        share.putExtra(Intent.EXTRA_TEXT, scene.getTitle() + "\n\r" + scene.getUrl());
                 share.putExtra(Intent.EXTRA_TITLE, scene.getTitle());
                 share.putExtra(Intent.EXTRA_SUBJECT, scene.getDesc());
                 startActivity(share);
@@ -125,7 +125,7 @@ public class SocialShareActivity extends Activity implements IWeiboHandler.Respo
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(0, ResourceUtils.getResourceIdByName(mContext, "anim", "jjdxm_social_snack_out"));
+        overridePendingTransition(0, R.anim.jjdxm_social_snack_out);
     }
 
     @Override

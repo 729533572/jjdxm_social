@@ -1,6 +1,7 @@
 package com.dou361.social.model;
 
 import java.io.Serializable;
+
 /**
  * ========================================
  * <p>
@@ -91,6 +92,9 @@ public class SocialShareScene implements Serializable {
     }
 
     public String getTitle() {
+        if (title != null && title.length() > 31) {
+            return title.substring(0, 30);
+        }
         return title;
     }
 
@@ -99,6 +103,9 @@ public class SocialShareScene implements Serializable {
     }
 
     public String getDesc() {
+        if (desc != null && desc.length() > 31) {
+            return desc.substring(0, 30);
+        }
         return desc;
     }
 

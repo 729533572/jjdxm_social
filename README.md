@@ -46,9 +46,12 @@ or Gradle:
 
 历史版本
 
+	compile 'com.dou361.social:jjdxm-social:1.0.3'
+	compile 'com.dou361.social:jjdxm-social:1.0.2'
+	compile 'com.dou361.social:jjdxm-social:1.0.1'
 	compile 'com.dou361.social:jjdxm-social:1.0.0'
 
-jjdxm-social requires at minimum Java 15 or Android 4.0.
+jjdxm-social requires at minimum Java 9 or Android 2.3.
 
 [架包的打包引用以及冲突解决][jaraar]
 
@@ -263,6 +266,8 @@ QQ: [jjdxm-tencent](https://github.com/jjdxmashl/jjdxm_tencent)
 ## More Actions ##
 
 ## ChangeLog ##
+
+2016.12.02 1.0.3版本打包，移除注解
 
 ## About Author ##
 

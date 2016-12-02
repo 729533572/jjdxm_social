@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.dou361.social.R;
 import com.dou361.social.SocialSDK;
 import com.dou361.social.model.SocialInfo;
-import com.dou361.social.utils.ResourceUtils;
 import com.dou361.social.view.ShareButton;
 import com.tencent.connect.common.Constants;
 
@@ -53,18 +53,18 @@ public class SocialOauthActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
-        setContentView(ResourceUtils.getResourceIdByName(mContext, "layout", "jjdxm_social_activity_social_oauth"));
+        setContentView(R.layout.jjdxm_social_activity_social_oauth);
 
         info = (SocialInfo) getIntent().getExtras().getSerializable("info");
 
-        llWeibo = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_oauth_sb_weibo"));
+        llWeibo = (ShareButton) findViewById(R.id.social_oauth_sb_weibo);
         llWeibo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SocialSSOProxy.loginWeibo(SocialOauthActivity.this, info);
             }
         });
-        llWeChat = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_oauth_sb_wechat"));
+        llWeChat = (ShareButton) findViewById(R.id.social_oauth_sb_wechat);
         llWeChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +72,7 @@ public class SocialOauthActivity extends Activity {
                 type = 1;
             }
         });
-        llQQ = (ShareButton) findViewById(ResourceUtils.getResourceIdByName(mContext, "id", "social_oauth_sb_qq"));
+        llQQ = (ShareButton) findViewById(R.id.social_oauth_sb_qq);
         llQQ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,6 +107,6 @@ public class SocialOauthActivity extends Activity {
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(0, ResourceUtils.getResourceIdByName(mContext, "anim", "jjdxm_social_snack_out"));
+        overridePendingTransition(0, R.anim.jjdxm_social_snack_out);
     }
 }

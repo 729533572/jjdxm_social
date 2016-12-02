@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.dou361.social.R;
 import com.dou361.social.SocialSDK;
 import com.dou361.social.model.SocialInfo;
 import com.dou361.social.model.SocialShareScene;
@@ -16,7 +17,6 @@ import com.dou361.social.share.wechat.IWXShareCallback;
 import com.dou361.social.share.wechat.WeChatShareProxy;
 import com.dou361.social.share.weibo.AccessTokenKeeper;
 import com.dou361.social.share.weibo.WeiboShareProxy;
-import com.dou361.social.utils.ResourceUtils;
 import com.sina.weibo.sdk.api.share.IWeiboHandler;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.WeiboAuthListener;
@@ -61,7 +61,7 @@ public class SocialShareProxy {
         intent.setClass(context, SocialShareActivity.class);
         context.startActivity(intent);
 
-        ((Activity) context).overridePendingTransition(ResourceUtils.getResourceIdByName(context, "anim", "jjdxm_social_snack_in"), 0);
+        ((Activity) context).overridePendingTransition(R.anim.jjdxm_social_snack_in, 0);
     }
 
     private static IWXShareCallback wechatShareCallback = new IWXShareCallback() {

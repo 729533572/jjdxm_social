@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.dou361.social.R;
 import com.dou361.social.SocialSDK;
 import com.dou361.social.model.SocialInfo;
 import com.dou361.social.model.SocialToken;
@@ -18,7 +19,6 @@ import com.dou361.social.sso.wechat.IWXCallback;
 import com.dou361.social.sso.wechat.WeChatSSOProxy;
 import com.dou361.social.sso.weibo.User;
 import com.dou361.social.sso.weibo.WeiboSSOProxy;
-import com.dou361.social.utils.ResourceUtils;
 import com.sina.weibo.sdk.auth.WeiboAuthListener;
 import com.sina.weibo.sdk.exception.WeiboException;
 import com.sina.weibo.sdk.net.RequestListener;
@@ -381,6 +381,6 @@ public class SocialSSOProxy {
         intent.putExtras(bundle);
         intent.setClass(context, SocialOauthActivity.class);
         context.startActivity(intent);
-        ((Activity) context).overridePendingTransition(ResourceUtils.getResourceIdByName(context, "anim", "jjdxm_social_snack_in"), 0);
+        ((Activity) context).overridePendingTransition(R.anim.jjdxm_social_snack_in, 0);
     }
 }

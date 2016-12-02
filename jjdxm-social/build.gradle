@@ -9,7 +9,7 @@ ext {
     jjdxm_groupId = 'com.dou361.social'
     jjdxm_artifactId = 'jjdxm-social'
 
-    jjdxm_libraryVersion = '1.0.2'
+    jjdxm_libraryVersion = '1.0.3'
     jjdxm_libraryName = 'jjdxm-social'
     jjdxm_libraryDescription = 'this is a social library of the application'
 
