@@ -46,6 +46,7 @@ or Gradle:
 
 历史版本
 
+    compile 'com.dou361.social:jjdxm-social:1.0.4'
 	compile 'com.dou361.social:jjdxm-social:1.0.3'
 	compile 'com.dou361.social:jjdxm-social:1.0.2'
 	compile 'com.dou361.social:jjdxm-social:1.0.1'
@@ -57,34 +58,31 @@ jjdxm-social requires at minimum Java 9 or Android 2.3.
 
 ## Proguard ##
 
-根据你的混淆器配置和使用，您可能需要在你的proguard文件内配置以下内容：
-
-	##微信
-	-keep class com.tencent.mm.sdk.** {*;}
-
-	##微博
-	-keep public class com.sina.weibo.** {*;}
-	-keep public class com.sina.sso.** {*;}
-
-	##otto
-	-keepattributes *Annotation*
-	-keepclassmembers class ** {
-	    @com.squareup.otto.Subscribe public *;
-	    @com.squareup.otto.Produce public *;
-	}
+类库中使用consumerProguardFiles属性，它指定了编译时，库自动引入的混淆规则。也就是说应用打包时候会自动的寻找库里的混淆文件，不需要手工配置了。
 
 
 [AndroidStudio代码混淆注意的问题][minify]
 
 ## Get Started ##
 
+### step1 ###
+需要申请的一些权限已经集成到类库中了,引入依赖，如果主程序项目中有重复的类库，可以用打开注释来移除重复依赖。
 
-### 1.设置Debug模式 ###
+	    compile ('com.dou361.social:jjdxm-social:1.0.4'){
+	//        exclude group: 'com.android.support', module: 'support-v4'
+	//        exclude group: 'com.squareup', module: 'otto'
+	//        exclude group: 'com.dou361.weibo', module: 'jjdxm-weibo'
+	//        exclude group: 'com.dou361.wechat', module: 'jjdxm-wechat'
+	//        exclude group: 'com.dou361.tencent', module: 'jjdxm-tencent'
+	    }
+
+### step2 ###
+设置Debug模式
 
 	SocialSDK.setDebugMode(true); //默认false
 
-### 2.项目配置 ###
-配置微博后台回调地址   
+### step3 ###
+项目配置,配置微博后台回调地址   
 SDK的默认回调地址为[http://www.sina.com](http://www.sina.com)，需要在微博后台配置，否则会提示回调地址错误。   
 如果在SocialSDK.init()方法自定义了回调地址，需要在后台配置为相应地址。
 
@@ -123,15 +121,11 @@ WXEntryActivity
 	</activity>
 以上配置中的`XXXXXXXXX`换成app_id.
 
-### 3.注册权限 ###
 
-	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-### 4.一键分享功能（微博，微信，朋友圈，QQ，QQ空间） ###
+
+### step4 ###
+一键分享功能（微博，微信，朋友圈，QQ，QQ空间）
 
 SDK中SocialShareScene的定义
 
@@ -197,8 +191,8 @@ SDK中SocialShareScene的定义
 	SocialSDK.init("wechat_app_id", "weibo_app_id", "qq_app_id");
 	SocialSDK.shareTo(context, scene);
 
-### 5.一键登录授权功能（微博，微信，QQ） ###
-
+### step5 ###
+一键登录授权功能（微博，微信，QQ）
 
 
 授权结果回调   
@@ -250,11 +244,6 @@ SDK使用了[Otto](http://square.github.io/otto/)作为事件库，用以组件�
 
 	SocialSDK.revoke(context);
 
-### 6.按照平台去依赖SDK，在项目中主要将QQ、微信、微博三个平台提供的SDK打包到jCenter上面了，通过以下的方式进行的依赖的 ###
-
-	compile 'tencent:jjdxm-tencent:1.0.0' 对应的架包open_sdk_r5756_lite.jar
-	compile 'winchat:jjdxm-winchat:1.0.0' 对应版本 libammsdk.jar
-	compile 'weibo:jjdxm-weibo:1.0.0' 对应的微博weiboSDKCore_3.1.4.jar
 
 QQ: [jjdxm-tencent](https://github.com/jjdxmashl/jjdxm_tencent)
 
@@ -267,7 +256,8 @@ QQ: [jjdxm-tencent](https://github.com/jjdxmashl/jjdxm_tencent)
 
 ## ChangeLog ##
 
-2016.12.02 1.0.3版本打包，移除注解
+2016.12.04 1.0.4版本打包，添加混淆规则权限打包到架包内部简化接入成本
+2016.12.02 1.0.3版本打包，移除反射，避免混淆出错
 
 ## About Author ##
 

@@ -53,4 +53,5 @@ dependencies {
     compile rootProject.ext.jjdxm_v7
     compile 'com.jakewharton:butterknife:7.0.1'
     compile project(':jjdxm-social')
+
 }
